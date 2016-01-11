@@ -278,6 +278,7 @@
         _actionButtonContainerView = [[UIView alloc] initWithFrame:CGRectZero];
         [self.actionButtonContainerView setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.actionButtonContainerView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+        [self.actionButtonContainerView setBackgroundColor:[UIColor colorWithRed:151/255 green:151/255 blue:151/255 alpha:1.0]];
         [self.alertBackgroundView addSubview:self.actionButtonContainerView];
         
         [self addConstraint:[NSLayoutConstraint constraintWithItem:self.alertBackgroundView
@@ -515,7 +516,7 @@
                                                                                                metrics:nil
                                                                                                  views:NSDictionaryOfVariableBindings(firstButton, lastButton)]];
         
-        [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[firstButton(40)]|"
+        [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[firstButton(40)]|"
                                                                                                options:0
                                                                                                metrics:nil
                                                                                                  views:NSDictionaryOfVariableBindings(_contentViewContainerView, firstButton)]];

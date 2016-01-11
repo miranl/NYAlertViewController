@@ -350,9 +350,23 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
     
     _showsStatusBar = YES;
     
-    _buttonTitleFont = [UIFont systemFontOfSize:16.0f];
-    _cancelButtonTitleFont = [UIFont boldSystemFontOfSize:16.0f];
-    _destructiveButtonTitleFont = [UIFont systemFontOfSize:16.0f];
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_8_1) {
+        _buttonTitleFont = [UIFont systemFontOfSize:17 weight:UIFontWeightLight];
+    } else {
+        _buttonTitleFont = [UIFont systemFontOfSize:17];
+    }
+    
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_8_1) {
+        _cancelButtonTitleFont = [UIFont systemFontOfSize:17 weight:UIFontWeightLight];
+    } else {
+        _cancelButtonTitleFont = [UIFont systemFontOfSize:17];
+    }
+    
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_8_1) {
+        _destructiveButtonTitleFont = [UIFont systemFontOfSize:17 weight:UIFontWeightLight];
+    } else {
+        _destructiveButtonTitleFont = [UIFont systemFontOfSize:17];
+    }
     
     _buttonColor = [UIColor darkGrayColor];
     _buttonTitleColor = [UIColor whiteColor];

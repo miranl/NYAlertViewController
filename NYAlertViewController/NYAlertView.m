@@ -260,8 +260,14 @@
         [self.messageTextView setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisVertical];
         self.messageTextView.editable = NO;
         self.messageTextView.textAlignment = NSTextAlignmentCenter;
-        self.messageTextView.textColor = [UIColor darkGrayColor];
-        self.messageTextView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
+        self.messageTextView.textColor = [UIColor blackColor];
+        
+        if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_8_1) {
+            self.messageTextView.font = [UIFont systemFontOfSize:17 weight:UIFontWeightLight];
+        } else {
+            self.messageTextView.font = [UIFont systemFontOfSize:17];
+        }
+        
         self.messageTextView.text = NSLocalizedString(@"Message Text View", nil);
         [self.alertBackgroundView addSubview:self.messageTextView];
         
@@ -516,12 +522,12 @@
                                                                                                metrics:nil
                                                                                                  views:NSDictionaryOfVariableBindings(firstButton, lastButton)]];
         
-        [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[firstButton(40)]|"
+        [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[firstButton(44)]|"
                                                                                                options:0
                                                                                                metrics:nil
                                                                                                  views:NSDictionaryOfVariableBindings(_contentViewContainerView, firstButton)]];
         
-        [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[lastButton(40)]"
+        [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[lastButton(44)]"
                                                                                                options:0
                                                                                                metrics:nil
                                                                                                  views:NSDictionaryOfVariableBindings(lastButton)]];

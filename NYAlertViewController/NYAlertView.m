@@ -335,7 +335,7 @@
                                                                                          metrics:nil
                                                                                            views:NSDictionaryOfVariableBindings(_titleLabel)]];
         
-        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_messageTextView]-|"
+        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-13-[_messageTextView]-13-|"
                                                                                          options:0
                                                                                          metrics:nil
                                                                                            views:NSDictionaryOfVariableBindings(_messageTextView)]];

@@ -7,7 +7,6 @@
 
 #import "NYAlertViewController.h"
 
-#import "NYAlertView.h"
 
 @interface NYAlertAction ()
 
@@ -299,7 +298,7 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
 
 @interface NYAlertViewController () <UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate>
 
-@property NYAlertView *view;
+// @property NYAlertView *view;
 @property UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic, strong) id<UIViewControllerTransitioningDelegate> transitioningDelegate;
 

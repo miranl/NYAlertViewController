@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NYAlertView.h"
 
 @interface NYAlertAction : NSObject
 
@@ -186,6 +187,11 @@ typedef NS_ENUM(NSInteger, NYAlertViewControllerTransitionStyle) {
  @see addTextFieldWithConfigurationHandler:
  */
 @property (nonatomic, readonly) NSArray *textFields;
+
+/**
+ The whole alert view dialog window
+ */
+@property (nonatomic) NYAlertView *view;
 
 /**
  Add an alert action object to be displayed in the alert view

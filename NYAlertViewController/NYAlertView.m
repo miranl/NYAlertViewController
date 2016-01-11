@@ -278,7 +278,7 @@
         _actionButtonContainerView = [[UIView alloc] initWithFrame:CGRectZero];
         [self.actionButtonContainerView setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.actionButtonContainerView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-        [self.actionButtonContainerView setBackgroundColor:[UIColor colorWithRed:151/255 green:151/255 blue:151/255 alpha:1.0]];
+        [self.actionButtonContainerView setBackgroundColor:[UIColor colorWithRed:0.592 green:0.592 blue:0.592 alpha:1]]; // [UIColor colorWithRed:151/255 green:151/255 blue:151/255 alpha:1.0]];
         [self.alertBackgroundView addSubview:self.actionButtonContainerView];
         
         [self addConstraint:[NSLayoutConstraint constraintWithItem:self.alertBackgroundView

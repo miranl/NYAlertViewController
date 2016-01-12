@@ -517,7 +517,7 @@
                                                                                   multiplier:1.0f
                                                                                     constant:0.0f]];
         
-        [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[firstButton][lastButton]|"
+        [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[firstButton]-1-[lastButton]|"
                                                                                                options:NSLayoutFormatAlignAllCenterY
                                                                                                metrics:nil
                                                                                                  views:NSDictionaryOfVariableBindings(firstButton, lastButton)]];

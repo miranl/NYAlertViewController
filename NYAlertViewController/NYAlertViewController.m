@@ -345,7 +345,7 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
     
     // set rounded bottom border for action button container view
     if (self.alertViewCornerRadius != 0) {
-        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.view.actionButtonContainerView.bounds byRoundingCorners:( UIRectCornerBottomLeft | UIRectCornerBottomRight) cornerRadii:CGSizeMake(self.alertViewCornerRadius, self.alertViewCornerRadius)];
+        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.view.actionButtonContainerView.bounds byRoundingCorners:( UIRectCornerBottomLeft | UIRectCornerBottomRight) cornerRadii:CGSizeMake(self.alertViewCornerRadius-1 , self.alertViewCornerRadius-1)];
     
         CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
         maskLayer.frame = self.view.actionButtonContainerView.bounds;

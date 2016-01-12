@@ -245,6 +245,8 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
                                            completion:nil];
 }
 
+
+
 - (BOOL)shouldPresentInFullscreen {
     return NO;
 }
@@ -336,6 +338,20 @@ static CGFloat const kDefaultDismissalAnimationDuration = 0.6f;
     }
     
     return self;
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    // set rounded bottom border for action button container view
+    if (self.alertViewCornerRadius != 0) {
+        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.view.actionButtonContainerView.bounds byRoundingCorners:( UIRectCornerBottomLeft | UIRectCornerBottomRight) cornerRadii:CGSizeMake(self.alertViewCornerRadius, self.alertViewCornerRadius)];
+    
+        CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+        maskLayer.frame = self.view.actionButtonContainerView.bounds;
+        maskLayer.path  = maskPath.CGPath;
+        self.view.actionButtonContainerView.layer.mask = maskLayer;
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

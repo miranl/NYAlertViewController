@@ -8,6 +8,7 @@
 #import "NYAlertView.h"
 
 #import "NYAlertViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface NYAlertTextView : UITextView
 
@@ -110,20 +111,6 @@
     [self invalidateIntrinsicContentSize];
 }
 
-- (void)setEnabled:(BOOL)enabled {
-    [super setEnabled:enabled];
-    
-//    if (!enabled) {
-//        self.backgroundColor = [UIColor lightGrayColor];
-//        self.layer.borderColor = self.tintColor.CGColor;
-//        [self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-//    } else {
-//        self.backgroundColor = self.tintColor;
-//        self.layer.borderColor = self.tintColor.CGColor;
-//        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    }
-}
-
 - (void)tintColorDidChange {
     [super tintColorDidChange];
     
@@ -148,9 +135,9 @@
     self.layer.cornerRadius = cornerRadius;
 }
 
-//- (void)setEnabled:(BOOL)enabled {
-//    [super setEnabled:enabled];
-//
+- (void)setEnabled:(BOOL)enabled {
+    [super setEnabled:enabled];
+
 //    if (enabled) {
 //        self.layer.backgroundColor = self.tintColor.CGColor;
 //        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -158,7 +145,7 @@
 //        self.layer.backgroundColor = [UIColor lightGrayColor].CGColor;
 //        [self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
 //    }
-//}
+}
 
 //- (void)setType:(NYAlertViewButtonType)type {
 //    _type = type;
@@ -226,7 +213,6 @@
 @property (nonatomic) NSLayoutConstraint *alertBackgroundWidthConstraint;
 @property (nonatomic) UIView *contentViewContainerView;
 @property (nonatomic) UIView *textFieldContainerView;
-@property (nonatomic) UIView *actionButtonContainerView;
 
 @end
 
